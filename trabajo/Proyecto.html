@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- ===================== CONFIGURACIÓN INICIAL ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secretaría Virtual - Junta de Andalucía</title>
 
-  <!-- 🔹 Enlace a Bootstrap CSS (versión 5.3.3) -->
+  <!-- 🔹 BOOTSTRAP: enlace al archivo CSS principal desde CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- ===================== ESTILOS PERSONALIZADOS ===================== -->
   <style>
-    /* ==== Estilos personalizados adicionales ==== */
+    /* Color de fondo general de la página */
     body {
       background-color: #f8f9fa;
     }
 
+    /* Encabezado superior */
     header {
       background-color: white;
       border-bottom: 2px solid #e9ecef;
       padding: 10px 0;
     }
 
+    /* Tamaño fijo de los logotipos */
     .logo {
       height: 60px;
     }
 
+    /* 🔹 BOOTSTRAP: complementamos la barra de navegación */
     .navbar {
       background-color: #ffffff;
       border-bottom: 2px solid #dee2e6;
     }
 
+    /* Personalización de los enlaces del menú */
     .nav-link {
-      color: #00703c !important;
+      color: #00703c !important; /* Verde Junta de Andalucía */
       font-weight: 500;
     }
 
+    /* Efecto al pasar el ratón sobre los enlaces */
     .nav-link:hover {
       text-decoration: underline;
     }
 
+    /* Cabecera de las tarjetas */
     .card-header {
       background-color: #00703c;
       color: white;
       font-weight: bold;
     }
 
+    /* Clase agregada con JavaScript para resaltar elementos */
+    .highlight {
+      background-color: #e6f4ea !important;
+    }
+
+    /* Pie de página */
     footer {
       background-color: #00703c;
       color: white;
@@ -53,37 +67,48 @@
     }
   </style>
 </head>
+
 <body>
 
-<!-- ========================= ENCABEZADO ========================= -->
-<header class="container d-flex align-items-center justify-content-between"> <!-- 🔹 Bootstrap: contenedor flexible -->
-  <div class="d-flex align-items-center"> <!-- 🔹 Bootstrap: usa flexbox para alinear logo + texto -->
+<!-- =============================================================== -->
+<!-- ======================= ENCABEZADO ============================ -->
+<!-- =============================================================== -->
+<header class="container d-flex align-items-center justify-content-between">
+  <!-- 🔹 BOOTSTRAP: 'container' centra el contenido, 'd-flex' crea un contenedor flexible -->
+  <div class="d-flex align-items-center">
+    <!-- 🔹 BOOTSTRAP: 'me-3' = margen derecho de tamaño 3 -->
     <img src="https://www.juntadeandalucia.es/educacion/secretariavirtual/img/junta-andalucia-logo.png"
-         alt="Logo Junta de Andalucía" class="logo me-3"> <!-- 🔹 me-3 = margin-end Bootstrap -->
-
+         alt="Logo Junta de Andalucía" class="logo me-3">
     <div>
-      <h5 class="mb-0">Junta de Andalucía</h5> <!-- 🔹 mb-0 = margin-bottom: 0 -->
+      <!-- 🔹 BOOTSTRAP: 'mb-0' elimina el margen inferior -->
+      <h5 class="mb-0">Junta de Andalucía</h5>
       <small>Consejería de Desarrollo Educativo y Formación Profesional</small>
     </div>
   </div>
 
+  <!-- Segundo logotipo -->
   <img src="https://www.juntadeandalucia.es/educacion/secretariavirtual/img/secretaria-virtual-logo.png"
        alt="Secretaría Virtual" class="logo">
 </header>
 
-<!-- ========================= MENÚ DE NAVEGACIÓN ========================= -->
-<nav class="navbar navbar-expand-lg navbar-light"> <!-- 🔹 Bootstrap: barra de navegación -->
-  <div class="container"> <!-- 🔹 Contenedor centrado -->
-    <a class="navbar-brand fw-bold text-success" href="#">Inicio</a> <!-- 🔹 fw-bold = negrita, text-success = verde -->
+<!-- =============================================================== -->
+<!-- ===================== MENÚ DE NAVEGACIÓN ====================== -->
+<!-- =============================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <!-- 🔹 BOOTSTRAP: 'navbar' crea la barra, 'navbar-expand-lg' la hace responsive -->
+  <div class="container">
+    <!-- 🔹 BOOTSTRAP: 'fw-bold' = negrita, 'text-success' = color verde -->
+    <a class="navbar-brand fw-bold text-success" href="#">Inicio</a>
 
-    <!-- 🔹 Botón hamburguesa visible solo en móviles -->
+    <!-- 🔹 BOOTSTRAP: botón hamburguesa para móviles -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span> <!-- 🔹 Icono estándar Bootstrap -->
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- 🔹 Menú colapsable en móviles -->
+    <!-- 🔹 BOOTSTRAP: contenedor que se colapsa en pantallas pequeñas -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> <!-- 🔹 ms-auto = margen izquierdo automático (empuja a la derecha) -->
+      <!-- 🔹 BOOTSTRAP: 'ms-auto' empuja el menú a la derecha -->
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#">Solicitudes</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Consultas</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Acceso</a></li>
@@ -93,70 +118,136 @@
   </div>
 </nav>
 
-<!-- ========================= CONTENIDO PRINCIPAL ========================= -->
-<main class="container mt-4"> <!-- 🔹 mt-4 = margin-top: 1.5rem -->
-  <h4 class="text-success fw-bold mb-4">Novedades</h4> <!-- 🔹 text-success = color verde, fw-bold = negrita -->
+<!-- =============================================================== -->
+<!-- ==================== CONTENIDO PRINCIPAL ====================== -->
+<!-- =============================================================== -->
+<main class="container mt-4">
+  <!-- 🔹 BOOTSTRAP: 'container' centra y da márgenes laterales -->
+  <!-- 🔹 BOOTSTRAP: 'mt-4' añade margen superior -->
+  <h4 class="text-success fw-bold mb-4">Novedades</h4>
+  <!-- 🔹 BOOTSTRAP: 'text-success' cambia el color del texto, 'fw-bold' pone negrita, 'mb-4' añade margen inferior -->
 
-  <!-- 🔹 Bootstrap grid system: fila -->
+  <!-- 🔹 BOOTSTRAP: 'row' define una fila de columnas -->
   <div class="row">
-    <!-- ======== COLUMNA IZQUIERDA: CONSULTAS ======== -->
-    <div class="col-md-6 mb-4"> <!-- 🔹 col-md-6 = 50% ancho en pantallas medianas -->
-      <div class="card shadow-sm"> <!-- 🔹 card = tarjeta Bootstrap, shadow-sm = sombra ligera -->
-        <div class="card-header">Consultas</div> <!-- 🔹 Encabezado de tarjeta -->
 
-        <ul class="list-group list-group-flush"> <!-- 🔹 list-group = lista con bordes limpios -->
-          <li class="list-group-item">
-            <strong>06 NOV 2025</strong> - Oferta de plazas vacantes en centros docentes sostenidos con fondos públicos...
-          </li>
-          <li class="list-group-item">
-            <strong>23 OCT 2025</strong> - Resolución definitiva ayudas por desplazamiento...
-          </li>
-          <li class="list-group-item">
-            <strong>26 SEP 2025</strong> - Relación de plazas vacantes en Oferta Parcial Modular...
-          </li>
-          <li class="list-group-item">
-            <strong>11 SEP 2025</strong> - Oferta de centros docentes con fondos públicos...
-          </li>
+    <!-- ===================== COLUMNA IZQUIERDA ===================== -->
+    <div class="col-md-6 mb-4">
+      <!-- 🔹 BOOTSTRAP: 'col-md-6' ocupa media fila en pantallas medianas -->
+      <!-- 🔹 BOOTSTRAP: 'mb-4' añade margen inferior -->
+      <div class="card shadow-sm">
+        <!-- 🔹 BOOTSTRAP: 'card' crea una tarjeta, 'shadow-sm' agrega una sombra ligera -->
+        <div class="card-header">Consultas</div>
+
+        <!-- 🔹 BOOTSTRAP: 'list-group' y 'list-group-flush' crean una lista dentro de la tarjeta -->
+        <ul class="list-group list-group-flush" id="consultas-list">
+          <li class="list-group-item">06 NOV 2025 - Oferta de plazas vacantes...</li>
+          <li class="list-group-item">23 OCT 2025 - Resolución definitiva de ayudas...</li>
+          <li class="list-group-item">26 SEP 2025 - Relación de plazas vacantes...</li>
+          <li class="list-group-item">11 SEP 2025 - Oferta de centros docentes...</li>
         </ul>
 
-        <!-- 🔹 Pie de tarjeta -->
-        <div class="card-footer text-end"> <!-- 🔹 text-end = alinear texto a la derecha -->
-          <a href="#" class="text-success fw-bold text-decoration-none">Ver más...</a>
+        <!-- 🔹 BOOTSTRAP: 'card-footer' es el pie de la tarjeta -->
+        <div class="card-footer text-end">
+          <!-- 🔹 BOOTSTRAP: 'btn', 'btn-outline-success', 'btn-sm' dan estilo al botón -->
+          <button class="btn btn-outline-success btn-sm" id="btnVerMasConsultas">Ver más...</button>
         </div>
       </div>
     </div>
 
-    <!-- ====== COLUMNA DERECHA: SOLICITUDES ====== -->
-    <div class="col-md-6 mb-4"> <!-- 🔹 Segunda columna Bootstrap -->
+    <!-- ===================== COLUMNA DERECHA ===================== -->
+    <div class="col-md-6 mb-4">
       <div class="card shadow-sm">
         <div class="card-header">Solicitudes</div>
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <strong>06 NOV - 10 NOV 2025</strong> - Admisión en plazas vacantes en ciclos formativos de grado básico...
-          </li>
-          <li class="list-group-item">
-            <strong>29 OCT - 15 NOV 2025</strong> - Firma de Conciertos Educativos
-          </li>
-          <li class="list-group-item">
-            <strong>21 MAY - 20 DIC 2025</strong> - Solicitud de matrícula en plazas vacantes...
-          </li>
-          <li class="list-group-item">
-            <strong>23 DIC 2024 - 31 DIC 2025</strong> - Autorización expresa para la subcontratación...
-          </li>
+        <ul class="list-group list-group-flush" id="solicitudes-list">
+          <li class="list-group-item">06 NOV - 10 NOV 2025 - Admisión en plazas vacantes...</li>
+          <li class="list-group-item">29 OCT - 15 NOV 2025 - Firma de Conciertos Educativos</li>
+          <li class="list-group-item">21 MAY - 20 DIC 2025 - Solicitud de matrícula...</li>
+          <li class="list-group-item">23 DIC 2024 - 31 DIC 2025 - Autorización expresa...</li>
         </ul>
+        <div class="card-footer text-end">
+          <button class="btn btn-outline-success btn-sm" id="btnVerMasSolicitudes">Ver más...</button>
+        </div>
       </div>
     </div>
   </div>
 </main>
 
-<!-- ========================= PIE DE PÁGINA ========================= -->
+<!-- =============================================================== -->
+<!-- ======================== PIE DE PÁGINA ======================== -->
+<!-- =============================================================== -->
 <footer>
   <p class="mb-0">&copy; 2025 Junta de Andalucía - Secretaría Virtual de los Centros Educativos</p>
+  <!-- 🔹 BOOTSTRAP: 'mb-0' elimina el margen inferior del párrafo -->
 </footer>
 
-<!-- 🔹 Bootstrap JS: funcionalidades dinámicas (menú desplegable, colapsables, etc.) -->
+<!-- =============================================================== -->
+<!-- ============ ARCHIVOS JAVASCRIPT DE BOOTSTRAP Y PROPIO ========= -->
+<!-- =============================================================== -->
+
+<!-- 🔹 BOOTSTRAP: archivo JS para menús desplegables, navbar y otros componentes -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ===================== JAVASCRIPT INTERNO ===================== -->
+<script>
+  // ===============================================================
+  //  SCRIPT DE INTERACTIVIDAD DE LA SECRETARÍA VIRTUAL
+  // ===============================================================
+
+  // Espera a que el documento HTML se cargue completamente
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // -----------------------------------------------------------
+    // 🔹 BOTONES "VER MÁS..."
+    // -----------------------------------------------------------
+    // Obtenemos los botones por su ID
+    const btnConsultas = document.getElementById("btnVerMasConsultas");
+    const btnSolicitudes = document.getElementById("btnVerMasSolicitudes");
+
+    // Cuando se hace clic en "Ver más..." de Consultas
+    btnConsultas.addEventListener("click", () => {
+      alert("Mostrando más consultas disponibles para el curso 2025/2026.");
+    });
+
+    // Cuando se hace clic en "Ver más..." de Solicitudes
+    btnSolicitudes.addEventListener("click", () => {
+      alert("Mostrando más solicitudes y plazos disponibles.");
+    });
+
+    // -----------------------------------------------------------
+    // 🔹 EFECTO HOVER SOBRE LOS ELEMENTOS DE LAS LISTAS
+    // -----------------------------------------------------------
+    // Seleccionamos todos los elementos con la clase de Bootstrap 'list-group-item'
+    const listas = document.querySelectorAll(".list-group-item"); // 🔹 BOOTSTRAP
+
+    // Añadimos efecto visual al pasar el ratón
+    listas.forEach(item => {
+      // Cuando el ratón entra en el elemento
+      item.addEventListener("mouseenter", () => {
+        item.classList.add("highlight"); // Añade color de fondo suave
+      });
+
+      // Cuando el ratón sale del elemento
+      item.addEventListener("mouseleave", () => {
+        item.classList.remove("highlight"); // Quita el color
+      });
+    });
+
+    // -----------------------------------------------------------
+    // 🔹 EVENTO DE CLIC EN ELEMENTOS DE LISTA
+    // -----------------------------------------------------------
+    // Muestra un mensaje con el texto del elemento clicado
+    listas.forEach(item => {
+      item.addEventListener("click", () => {
+        alert("Has seleccionado:\n" + item.textContent);
+      });
+    });
+
+    // -----------------------------------------------------------
+    // 🔹 MENSAJE EN CONSOLA (solo visible en F12)
+    // -----------------------------------------------------------
+    console.log("Página cargada correctamente el " + new Date().toLocaleDateString());
+  });
+</script>
+
 </body>
 </html>
-
