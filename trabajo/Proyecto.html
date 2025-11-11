@@ -65,6 +65,22 @@
       padding: 15px;
       margin-top: 40px;
     }
+
+    /* ✅ NUEVO: hace que el footer quede abajo si hay poco contenido */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
   </style>
 </head>
 
@@ -176,7 +192,7 @@
 <!-- =============================================================== -->
 <!-- ======================== PIE DE PÁGINA ======================== -->
 <!-- =============================================================== -->
-<footer>
+<footer style="alignment-baseline: bottom">
   <p class="mb-0">&copy; 2025 Junta de Andalucía - Secretaría Virtual de los Centros Educativos</p>
   <!-- 🔹 BOOTSTRAP: 'mb-0' elimina el margen inferior del párrafo -->
 </footer>
