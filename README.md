@@ -1,6 +1,6 @@
-# 
+#
 
-Este proyecto consiste en la modernización y mejora del diseño de la página de la **Secretaría Virtual de los Centros Educativos** de la **Junta de Andalucía**.  
+Este proyecto consiste en la modernización y mejora del diseño de la página de la **Secretaría Virtual de los Centros Educativos** de la **Junta de Andalucía**.
 El objetivo principal es actualizar su apariencia y formato utilizando tecnologías web actuales, manteniendo una estructura clara, accesible y responsive.
 
 ---
@@ -10,11 +10,7 @@ El objetivo principal es actualizar su apariencia y formato utilizando tecnolog�
 2. Objetivos del Proyecto
 3. Características Principales
 4. Tecnologías Utilizadas
-5. Estructura del Proyecto
-6. Instrucciones de Uso
-7. Personalización
-8. Contribuciones
-9. Autor
+
 
 ---
 
@@ -38,7 +34,7 @@ Este proyecto es una **versión rediseñada de la interfaz**, desarrollada con *
 
 ## Características Principales
 
-- Cabecera con logotipos institucionales y título informativo.  
+- Cabecera con logotipos institucionales y título informativo.
 - Menú de navegación adaptable con secciones colapsables para:
   - Acceso a diferentes perfiles (alumnado, familias, profesorado).
   - Información sobre el pago del seguro escolar.
@@ -53,10 +49,10 @@ Este proyecto es una **versión rediseñada de la interfaz**, desarrollada con *
 
 ## Tecnologías Utilizadas
 
-- **HTML5** — Estructura semántica del documento.  
-- **CSS3** — Estilos personalizados.  
-- **Bootstrap 5.3.3** — Diseño responsive y componentes interactivos.  
-- **JavaScript (Vanilla)** — Interactividad básica.  
+- **HTML5** — Estructura semántica del documento.
+- **CSS3** — Estilos personalizados.
+- **Bootstrap 5.3.3** — Diseño responsive y componentes interactivos.
+- **JavaScript (Vanilla)** — Interactividad básica.
 
 ---
 
