@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- ===================== CONFIGURACIÓN INICIAL ===================== -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secretaría Virtual - Junta de Andalucía</title>
+  <meta charset="UTF-8"> <!-- Codificación para soportar caracteres especiales -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsive -->
+  <title>Secretaría Virtual - Junta de Andalucía</title> <!-- Título de la pestaña -->
 
-  <!-- 🔹 Enlace al archivo CSS de Bootstrap desde CDN (para estilos predefinidos) -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- ===================== ESTILOS PERSONALIZADOS ===================== -->
   <style>
+    /* ======================= ESTILOS PERSONALIZADOS ======================= */
     body {
-      background-color: #f8f9fa;
+      background-color: #f8f9fa; /* Fondo claro */
+      display: flex;             /* Flexbox para layout vertical */
+      flex-direction: column;
+      min-height: 100vh;         /* Ocupa toda la altura de la ventana */
     }
 
     header {
       background-color: white;
-      border-bottom: 2px solid #e9ecef;
+      border-bottom: 2px solid #e9ecef; /* Separación inferior */
       padding: 10px 0;
     }
 
     .logo {
-      height: 60px;
+      height: 60px; /* Tamaño de los logos */
     }
 
     .navbar {
@@ -31,176 +33,125 @@
     }
 
     .nav-link {
-      color: #00703c !important;
+      color: #00703c !important; /* Color verde */
       font-weight: 500;
     }
 
     .nav-link:hover {
-      text-decoration: underline;
+      text-decoration: underline; /* Subrayado al pasar el mouse */
     }
 
     .card-header {
-      background-color: #00703c;
+      background-color: #00703c; /* Verde para cabeceras de tarjetas */
       color: white;
       font-weight: bold;
     }
 
     .highlight {
-      background-color: #e6f4ea !important;
+      background-color: #e6f4ea !important; /* Resalta items al hacer hover */
     }
 
     footer {
-      background-color: #00703c;
+      background-color: #00703c; /* Fondo verde en footer */
       color: white;
       text-align: center;
       padding: 15px;
       margin-top: 40px;
     }
 
-    html, body {
+    html {
+      scroll-behavior: smooth; /* Desplazamiento suave */
       height: 100%;
-      margin: 0;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
     main {
-      flex: 1;
+      flex: 1; /* Ocupa el espacio restante */
     }
 
-    /* ✅ NUEVO: desplazamiento suave al mostrar el bloque desplegable */
-    html {
-      scroll-behavior: smooth;
-    }
     .img-escala {
-      height: 50.33%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
+      height: 33.33%;           /* Ajuste de altura de imagen */
+      aspect-ratio: 3 / 2;      /* Mantiene proporción 3:2 */
+      object-fit: cover;         /* Cubre espacio sin deformar */
     }
   </style>
-
-
 </head>
 
 <body>
 
-<!-- =============================================================== -->
 <!-- ======================= ENCABEZADO ============================ -->
-<!-- =============================================================== -->
 <header class="container-fluid d-flex align-items-center justify-content-between px-4">
+  <!-- Logo + título a la izquierda -->
   <div class="d-flex align-items-center">
-    <!-- Logotipo institucional -->
     <img src="../img/betis.png" alt="Escudo Betis" class="logo me-3">
-
-    <!-- Texto informativo -->
     <div>
-      <h5 class="mb-0">Junta de Andalucía</h5>
-      <small>Consejería de Desarrollo Educativo y Formación Profesional</small>
+      <h5 class="mb-0">Junta de Andalucía</h5> <!-- Título -->
+      <small>Consejería de Desarrollo Educativo y Formación Profesional</small> <!-- Subtítulo -->
     </div>
   </div>
-
-  <!-- Imagen complementaria -->
+  <!-- Imagen decorativa a la derecha -->
   <img src="../img/sherk.jpeg" alt="Shrek" class="logo me-3">
 </header>
 
-<!-- =============================================================== -->
 <!-- ===================== MENÚ DE NAVEGACIÓN ====================== -->
-<!-- =============================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-    <!-- Enlace de inicio -->
+    <!-- Marca / Inicio -->
     <a class="navbar-brand fw-bold text-success" href="#">Inicio</a>
-
-    <!-- Botón hamburguesa (solo visible en pantallas pequeñas) -->
+    <!-- Botón hamburguesa para móviles -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Contenedor que agrupa todos los enlaces de navegación -->
+    <!-- Enlaces del menú -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"><!-- ms-auto = empuja los elementos a la derecha -->
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="https://secretariavirtual.juntadeandalucia.es/secretariavirtual/solicitudes/">Solicitudes</a></li>
         <li class="nav-item"><a class="nav-link" href="https://secretariavirtual.juntadeandalucia.es/secretariavirtual/consultas/">Consultas</a></li>
-
-        <!-- 🔽 Enlace con bloque colapsable: "Acceso" -->
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#accesoCollapse" aria-expanded="false">
-            Acceso
-          </a>
-        </li>
-
-        <!-- 🔽 Enlace con bloque colapsable: "Pago Seguro Escolar" -->
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="collapse"  data-bs-target="#pagoSeguroCollapse" aria-expanded="false">
-            Pago Seguro Escolar
-          </a>
-        </li>
+        <!-- Enlaces que despliegan secciones -->
+        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#accesoCollapse">Acceso</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#pagoSeguroCollapse">Pago Seguro Escolar</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- =============================================================== -->
-<!-- 🔽 BLOQUE DESPLEGABLE: ACCESO -->
-<!-- =============================================================== -->
+<!-- ==================== BLOQUES DESPLEGABLES ===================== -->
+<!-- Acceso a la Secretaría Virtual -->
 <div class="collapse" id="accesoCollapse">
   <div class="container mt-3 text-center">
     <div class="card shadow-sm border-success">
-      <div class="card-header bg-success text-white fw-bold">
-        Acceso a la Secretaría Virtual
-      </div>
-
+      <div class="card-header bg-success text-white fw-bold">Acceso a la Secretaría Virtual</div>
       <div class="card-body">
         <p class="mb-3">Selecciona el tipo de acceso que desees realizar:</p>
-
-        <!-- Botones de acceso, distribuidos con flexbox -->
         <div class="d-flex justify-content-center gap-3 flex-wrap">
-          <a href="https://www.juntadeandalucia.es/educacion/eaprendizaje/moodle-centros/" class="btn btn-outline-success"> 🔑 Acceso del Alumnado</a>
+          <a href="https://www.juntadeandalucia.es/educacion/eaprendizaje/moodle-centros/" class="btn btn-outline-success">🔑 Acceso del Alumnado</a>
           <a href="#" class="btn btn-outline-success">👩‍👩‍👧 Acceso de Familias</a>
           <a href="#" class="btn btn-outline-success">👨‍🏫 Acceso de Profesorado</a>
         </div>
-
-        <p class="mt-3 text-muted">
-          Si tienes problemas para acceder, contacta con el soporte técnico.
-        </p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- =============================================================== -->
-<!-- 🔽 BLOQUE DESPLEGABLE: PAGO SEGURO ESCOLAR -->
-<!-- =============================================================== -->
+<!-- Información del Pago del Seguro Escolar -->
 <div class="collapse" id="pagoSeguroCollapse">
   <div class="container mt-3 text-center">
     <div class="card shadow-sm border-success">
-      <div class="card-header bg-success text-white fw-bold">
-        Información del Pago del Seguro Escolar
-      </div>
+      <div class="card-header bg-success text-white fw-bold">Información del Pago del Seguro Escolar</div>
       <div class="card-body">
-        <!-- Imagen ilustrativa -->
-        <img src="../img/Moroso.jpeg" alt="Instrucciones de pago del Seguro Escolar"
-             class="img-fluid rounded shadow-sm">
-        <p class="mt-3">
-          Para más información, consulta el portal oficial de la Junta de Andalucía.
-        </p>
+        <img src="../img/Moroso.jpeg" alt="Instrucciones de pago del Seguro Escolar" class="img-fluid rounded shadow-sm">
+        <p class="mt-3">Para más información, consulta el portal oficial de la Junta de Andalucía.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- =============================================================== -->
 <!-- ==================== CONTENIDO PRINCIPAL ====================== -->
-<!-- =============================================================== -->
 <main class="container mt-4">
   <h4 class="text-success fw-bold mb-4">Novedades</h4>
 
   <div class="row">
-    <!-- ===================== COLUMNA IZQUIERDA ===================== -->
+    <!-- Consultas -->
     <div class="col-md-6 mb-4">
       <div class="card shadow-sm">
         <div class="card-header">Consultas</div>
@@ -216,7 +167,7 @@
       </div>
     </div>
 
-    <!-- ===================== COLUMNA DERECHA ===================== -->
+    <!-- Solicitudes -->
     <div class="col-md-6 mb-4">
       <div class="card shadow-sm">
         <div class="card-header">Solicitudes</div>
@@ -232,64 +183,50 @@
       </div>
     </div>
   </div>
-  <img src="../img/jm.jpg" alt="Shrek" class="logo me-3 img-fluid img-escala">
 
+  <!-- Imagen + Noticias -->
+  <div class="row align-items-center mt-4">
+    <div class="col-md-6 text-center">
+      <img src="../img/jm.jpg" alt="Shrek" class="img-fluid img-escala rounded shadow-sm">
+    </div>
+    <div class="col-md-6">
+      <div class="card shadow-sm border-success">
+        <div class="card-header bg-success text-white fw-bold">📰 Noticias</div>
+        <div class="card-body">
+          <p>Visita las noticias más recientes y satíricas en El Mundo Today.</p>
+          <a href="https://www.elmundotoday.com" target="_blank" class="btn btn-outline-success">Ir a El Mundo Today</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
-<!-- =============================================================== -->
 <!-- ======================== PIE DE PÁGINA ======================== -->
-<!-- =============================================================== -->
 <footer>
   <p class="mb-0">&copy; 2025 Junta de Andalucía - Secretaría Virtual de los Centros Educativos</p>
 </footer>
 
-<!-- =============================================================== -->
-<!-- ============ ARCHIVOS JAVASCRIPT DE BOOTSTRAP Y PROPIO ========= -->
-<!-- =============================================================== -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ======================== JS ======================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JS -->
 
 <script>
-  // ===============================================================
-  // 🧩 SCRIPT DE INTERACTIVIDAD DE LA SECRETARÍA VIRTUAL
-  // ===============================================================
-  // Este bloque se ejecuta una vez que el contenido HTML ha sido cargado completamente.
   document.addEventListener("DOMContentLoaded", function () {
-
-    // -----------------------------------------------------------------
-    // 1️⃣ Captura de los botones "Ver más..."
-    // -----------------------------------------------------------------
-    // Se obtienen las referencias a los botones mediante sus IDs.
     const btnConsultas = document.getElementById("btnVerMasConsultas");
     const btnSolicitudes = document.getElementById("btnVerMasSolicitudes");
 
-    // 🔸 Actualmente no se define ninguna acción al hacer clic.
-    //     Puedes añadir aquí redirecciones o mostrar más contenido dinámico.
+    // Redirecciones de "Ver más..."
     btnConsultas.addEventListener("click", () => {
-      // Ejemplo: Redirigir a otra página
-      // window.location.href = "consultas.html";
+      window.location.href = "https://secretariavirtual.juntadeandalucia.es/secretariavirtual/consultas/";
     });
 
     btnSolicitudes.addEventListener("click", () => {
-      // Ejemplo: Mostrar más solicitudes o redirigir a un formulario
-      // window.location.href = "solicitudes.html";
+      window.location.href = "https://secretariavirtual.juntadeandalucia.es/secretariavirtual/solicitudes/";
     });
 
-    // -----------------------------------------------------------------
-    // 2️⃣ Efecto visual "hover" sobre los elementos de las listas
-    // -----------------------------------------------------------------
-    // Se seleccionan todos los elementos con la clase "list-group-item"
-    const listas = document.querySelectorAll(".list-group-item");
-
-    // Recorremos cada elemento para añadirle eventos de ratón
-    listas.forEach(item => {
-      // Al entrar el ratón, se aplica la clase .highlight (fondo verde claro)
+    // Efecto hover en los items de la lista
+    document.querySelectorAll(".list-group-item").forEach(item => {
       item.addEventListener("mouseenter", () => item.classList.add("highlight"));
-
-      // Al salir el ratón, se elimina la clase .highlight
       item.addEventListener("mouseleave", () => item.classList.remove("highlight"));
-
-      // 🔹 Antes: mostraba un alert al hacer clic. Eliminado para evitar interrupciones.
-      // Puedes usar este espacio para abrir un modal o ampliar información del ítem.
     });
   });
 </script>
