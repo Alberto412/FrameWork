@@ -86,14 +86,14 @@
 <!-- =============================================================== -->
 <header class="container-fluid d-flex align-items-center justify-content-between px-4">
   <div class="d-flex align-items-center">
-    <img src="../img/betis.png" alt="Logo Pepsi" class="logo me-3">
+    <img src="../img/betis.png" alt="Escudo Betis" class="logo me-3">
     <div>
       <h5 class="mb-0">Junta de Andalucía</h5>
       <small>Consejería de Desarrollo Educativo y Formación Profesional</small>
     </div>
   </div>
 
-  <img src="../img/sherk.jpeg" alt="Sherk" class="logo me-3">
+  <img src="../img/sherk.jpeg" alt="Shrek" class="logo me-3">
 </header>
 
 <!-- =============================================================== -->
@@ -101,20 +101,36 @@
 <!-- =============================================================== -->
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
+    <!-- 🔹 Enlace principal de inicio -->
     <a class="navbar-brand fw-bold text-success" href="#">Inicio</a>
 
+    <!-- 🔹 Botón que aparece en pantallas pequeñas (menú hamburguesa) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- 🔹 Contenedor colapsable que agrupa los enlaces de navegación -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Solicitudes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Consultas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Acceso</a></li>
+      <ul class="navbar-nav ms-auto"><!-- ms-auto empuja los elementos a la derecha -->
 
-        <!-- ✅ CAMBIO: Enlace de "Pago Seguro Escolar" ahora activa un bloque desplegable -->
-        <!-- Se usa 'data-bs-toggle="collapse"' y 'data-bs-target="#pagoSeguroCollapse"' -->
+        <!-- Enlace normal sin despliegue -->
+        <li class="nav-item"><a class="nav-link" href="#">Solicitudes</a></li>
+
+        <!-- Enlace normal sin despliegue -->
+        <li class="nav-item"><a class="nav-link" href="#">Consultas</a></li>
+
+        <!-- =========================================================== -->
+        <!-- 🔽 NUEVO: ENLACE QUE DESPLIEGA EL BLOQUE DE "ACCESO" -->
+        <!-- =========================================================== -->
+        <!-- data-bs-toggle="collapse" → indica a Bootstrap que controlará un bloque colapsable -->
+        <!-- data-bs-target="#accesoCollapse" → ID del bloque que se abrirá/cerrará -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#accesoCollapse" aria-expanded="false">
+            Acceso
+          </a>
+        </li>
+
+        <!-- Enlace que ya existía, con su propio bloque colapsable -->
         <li class="nav-item">
           <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#pagoSeguroCollapse" aria-expanded="false">
             Pago Seguro Escolar
@@ -124,6 +140,44 @@
     </div>
   </div>
 </nav>
+
+<!-- =============================================================== -->
+<!-- 🔽 BLOQUE DESPLEGABLE ASOCIADO AL ENLACE "ACCESO" -->
+<!-- =============================================================== -->
+<!-- La clase "collapse" permite mostrar/ocultar este bloque con Bootstrap -->
+<div class="collapse" id="accesoCollapse">
+  <div class="container mt-3 text-center">
+
+    <!-- Tarjeta que contiene la información del acceso -->
+    <div class="card shadow-sm border-success">
+
+      <!-- Encabezado verde del bloque -->
+      <div class="card-header bg-success text-white fw-bold">
+        Acceso a la Secretaría Virtual
+      </div>
+
+      <!-- Contenido principal del bloque -->
+      <div class="card-body">
+
+        <!-- Pequeño texto de introducción -->
+        <p class="mb-3">Selecciona el tipo de acceso que desees realizar:</p>
+
+        <!-- Botones alineados al centro con espacio entre ellos -->
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <!-- 🔹 Puedes sustituir los enlaces "#" por las URLs reales -->
+          <a href="#" class="btn btn-outline-success">🔑 Acceso del Alumnado</a>
+          <a href="#" class="btn btn-outline-success">👩‍👩‍👧 Acceso de Familias</a>
+          <a href="#" class="btn btn-outline-success">👨‍🏫 Acceso de Profesorado</a>
+        </div>
+
+        <!-- Nota o mensaje adicional -->
+        <p class="mt-3 text-muted">
+          Si tienes problemas para acceder, contacta con el soporte técnico.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ✅ NUEVO BLOQUE DESPLEGABLE CON LA IMAGEN -->
 <!-- Se muestra/oculta automáticamente gracias a Bootstrap -->
