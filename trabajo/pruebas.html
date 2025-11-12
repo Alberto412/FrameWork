@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretaría Virtual - Junta de Andalucía</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: white;
+      border-bottom: 2px solid #e9ecef;
+      padding: 10px 0;
+    }
+    .logo {
+      height: 60px;
+    }
+    .navbar {
+      background-color: #ffffff;
+      border-bottom: 2px solid #dee2e6;
+    }
+    .nav-link {
+      color: #00703c !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    .card-header {
+      background-color: #00703c;
+      color: white;
+      font-weight: bold;
+    }
+    .highlight {
+      background-color: #e6f4ea !important;
+    }
+    footer {
+      background-color: #00703c;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="container-fluid d-flex align-items-center justify-content-between px-4">
+  <div class="d-flex align-items-center">
+    <img src="../img/betis.png" alt="Logo Pepsi" class="logo me-3">
+    <div>
+      <h5 class="mb-0">Junta de Andalucía</h5>
+      <small>Consejería de Desarrollo Educativo y Formación Profesional</small>
+    </div>
+  </div>
+  <img src="../img/sherk.jpeg" alt="Sherk" class="logo me-3">
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="#">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Solicitudes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Consultas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Acceso</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#pagoSeguroCollapse" aria-expanded="false">
+            Pago Seguro Escolar
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="collapse" id="pagoSeguroCollapse">
+  <div class="container mt-3 text-center">
+    <div class="card shadow-sm border-success">
+      <div class="card-header bg-success text-white fw-bold">
+        Información del Pago del Seguro Escolar
+      </div>
+      <div class="card-body">
+        <img src="../img/Moroso.jpeg" alt="Instrucciones de pago del Seguro Escolar"
+             class="img-fluid rounded shadow-sm">
+        <p class="mt-3">
+          Para más información, consulta el portal oficial de la Junta de Andalucía.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container mt-4">
+  <h4 class="text-success fw-bold mb-4">Novedades</h4>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header">Consultas</div>
+        <ul class="list-group list-group-flush" id="consultas-list">
+          <li class="list-group-item">06 NOV 2025 - Oferta de plazas vacantes...</li>
+          <li class="list-group-item">23 OCT 2025 - Resolución definitiva de ayudas...</li>
+          <li class="list-group-item">26 SEP 2025 - Relación de plazas vacantes...</li>
+          <li class="list-group-item">11 SEP 2025 - Oferta de centros docentes...</li>
+        </ul>
+        <div class="card-footer text-end">
+          <button class="btn btn-outline-success btn-sm" id="btnVerMasConsultas">Ver más...</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-header">Solicitudes</div>
+        <ul class="list-group list-group-flush" id="solicitudes-list">
+          <li class="list-group-item">06 NOV - 10 NOV 2025 - Admisión en plazas vacantes...</li>
+          <li class="list-group-item">29 OCT - 15 NOV 2025 - Firma de Conciertos Educativos</li>
+          <li class="list-group-item">21 MAY - 20 DIC 2025 - Solicitud de matrícula...</li>
+          <li class="list-group-item">23 DIC 2024 - 31 DIC 2025 - Autorización expresa...</li>
+        </ul>
+        <div class="card-footer text-end">
+          <button class="btn btn-outline-success btn-sm" id="btnVerMasSolicitudes">Ver más...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="mb-0">&copy; 2025 Junta de Andalucía - Secretaría Virtual de los Centros Educativos</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Efecto hover sobre los elementos de las listas
+    const listas = document.querySelectorAll(".list-group-item");
+    listas.forEach(item => {
+      item.addEventListener("mouseenter", () => item.classList.add("highlight"));
+      item.addEventListener("mouseleave", () => item.classList.remove("highlight"));
+    });
+  });
+</script>
+
+</body>
+</html>
